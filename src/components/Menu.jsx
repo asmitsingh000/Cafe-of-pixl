@@ -1,19 +1,24 @@
-import React from 'react'
 import { menu } from '../data/Data';
 const Menu = () => {
     return (
-        <div className="menu flex flex-wrap gap-8 justify-center">
-            {menu.map((item) => (
-                <div key={item.id} className="card hover:cursor-pointer hover:translate-y-[-3px]">
-                    <img src={item.image} alt={item.name} width="200" />
-                    <div className="sub flex flex-col">
-                        <p>{item.type}</p>
-                        <h3>{item.name}</h3>
-                        <p>Nrs.{item.price}</p>
+        <div className="section">
+            <div className="grids">
+                {menu.map((item) => (
+                    <div className='cards'>
+                        <img src={item.image} alt={item.name} />
+                        <div className="cards-body">
+                            <div className="cards-head">
+                                <h3 className='name'>{item.name}</h3>
+                                <span className='type'>{item.type}</span>
+                                <p className='paisa'>{item.price}/-</p>
+                            </div>
+                            <button>Add to cart</button>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
+
     )
 }
 
