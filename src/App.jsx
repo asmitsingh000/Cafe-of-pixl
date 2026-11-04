@@ -8,15 +8,18 @@ import Home from './components/Home'
 const App = () => {
   const [cart, setCart] = useState([])
   const count = cart.length
-  const [open, close] = useState(() =>
-    !sessionStorage.getItem('seen'))
+  const [open, close] = useState(() =>!sessionStorage.getItem('seen'))
+  const [Started, setStarted] = useState(()=> !!sessionStorage.getItem('seen'))
   return (
     <>
       {open && (
-        <Home enter={() => {
-          sessionStorage.setItem('seen', 1)
+        <Home
+        onStart={()=>setStarted(true)}
+        onSampat={()=>{
+          sessionStorage.setItem('seen',1)
           close(false)
-        }} />
+        }}
+        />
       )}
       <header className='flex justify-between items-center p-5'>
         <NavLink to="/" className='logo'>Cafe of Pixl</NavLink>
@@ -28,7 +31,7 @@ const App = () => {
       </header>
       <Routes>
         {/* <Route path='/' element={<Home/>}  /> */}
-        <Route path='/' element={<Menu />} />
+        <Route path='/' element={<Menu className={Started ? 'menu-show' : 'menu-hide'} />} />
         <Route path='/kitchen' element={<Kitchen />} />
         <Route path='/cart' element={<Carts />} />
         {/* <Route path='/cart' element={<Carts cart={cart} setCart={setCart} />} /> */}

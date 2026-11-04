@@ -5,5 +5,11 @@
         { id: 3, name: "Black Coffee",type:"drinks", price: 140, image: "/photos/black-coffee.jpg" },
         { id: 4, name: "Burger",type:"fast food", price: 150, image: "/photos/burger.jpg" },
         { id: 5, name: "Pizza",type:"fast food", price: 200, image: "/photos/pizza.jpg" },
+        { id: 6, name: "Pizza",type:"fast food", price: 200, image: "/photos/pizza.jpg" },
+        { id: 7, name: "Pizza",type:"fast food", price: 200, image: "/photos/pizza.jpg" },
+        { id: 8, name: "Pizza",type:"fast food", price: 200, image: "/photos/pizza.jpg" },
+        { id: 9, name: "Pizza",type:"fast food", price: 200, image: "/photos/pizza.jpg" },
+        { id: 10, name: "Pizza",type:"fast food", price: 200, image: "/photos/pizza.jpg" },
+        { id: 11, name: "Pizza",type:"fast food", price: 200, image: "/photos/pizza.jpg" },
 
     ];
