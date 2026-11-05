@@ -6,29 +6,102 @@ export const CATEGORIZE = [
     { id: 'donuts', name: 'Donuts', color: '#E58B9B', desc: 'Sweet rings with delightful toppings' },
     { id: 'cookies', name: 'Cookies', color: '#95613D', desc: 'Freshly baked crunchy treats' },
     { id: 'ice-cream', name: 'Ice Cream', color: '#8C9ED6', desc: 'Creamy scoops of frozen delight' },
-    { id: 'hot-coffee', name: 'Hot Coffee', color: '#6F422D', desc: 'Warm and freshly brewed coffee' },
-    { id: 'cold-coffee', name: 'Cold Coffee', color: '#8B6A50', desc: 'Chilled coffee for refreshing moments' },
+    { id: 'coffee', name: 'Hot Coffee', color: '#6F422D', desc: 'Warm, cold and freshly brewed refreshing coffee' },
     { id: 'tea', name: 'Tea', color: '#789568', desc: 'Comforting cups of freshly brewed tea' },
     { id: 'milkshakes', name: 'Milkshakes', color: '#B77AC8', desc: 'Thick, creamy and delicious shakes' },
-    { id: 'smoothies', name: 'Smoothies', color: '#71A88A', desc: 'Fresh fruit blended into goodness' },
-    { id: 'burgers', name: 'Burgers', color: '#C77A36', desc: 'Juicy burgers with irresistible fillings' },
-    { id: 'pizza', name: 'Pizza', color: '#D65B45', desc: 'Freshly baked pizzas loaded with toppings' },
-    { id: 'sandwiches', name: 'Sandwiches', color: '#A4A05C', desc: 'Freshly prepared bites for every craving' },
-    { id: 'pasta', name: 'Pasta', color: '#D18B52', desc: 'Delicious pasta tossed in rich sauces' },
-    { id: 'fries', name: 'Fries & Sides', color: '#E0B54B', desc: 'Crispy sides to complete your meal' },
-    { id: 'breakfast', name: 'Breakfast', color: '#7D9FBB', desc: 'A delicious start to your morning' },
-    { id: 'mocktails', name: 'Mocktails', color: '#48A6A0', desc: 'Refreshing blends of fruity flavours' }
+    { id: 'fastfoods', name: 'Burgers', color: '#C77A36', desc: 'Here you go with some delicious fast foods' },
+    { id: 'pasta', name: 'Pasta', color: '#D18B52', desc: 'Delicious italia pasta tossed in rich sauces' }
 ];
-const make= (category,list) =>{
-    list.map(([file,name,price]) =>({
-        id: file,category,name,price,img:'/photos/${file}.jpg',
+const make = (category, list) =>
+    list.map(([file, name, price]) => ({
+        id: file, category, name, price, img: `/photos/${file}.jpg`,
     }))
-}
 
 export const menu = [
-    ...make('cake',[
-        
-    ])
+    ...make('cakes', [
+        ['chocolate-cake', 'Chocolate Cake', 120],
+        ['red-velvet-cake', 'Red Velvet Cake', 140],
+        ['black-forest-cake', 'Black Forest Cake', 130],
+        ['cheesecake', 'Cheesecake', 160],
+        ['pineapple-cake', 'Pineapple Cake', 110],
+    ]),
+    ...make('pancakes', [
+        ['classic-pancakes', 'Classic Pancakes', 150],
+        ['chocolate-pancakes', 'Chocolate Pancakes', 170],
+        ['berry-pancakes', 'Berry Pancakes', 180],
+        ['banana-pancakes', 'Banana Pancakes', 160],
+        ['honey-pancakes', 'Honey Pancakes', 160],
+    ]),
+    ...make('waffles', [
+        ['classic-waffle', 'Classic Waffle', 140],
+        ['chocolate-waffle', 'Chocolate Waffle', 160],
+        ['strawberry-waffle', 'Strawberry Waffle', 170],
+        ['ice-cream-waffle', 'Ice Cream Waffle', 190],
+        ['nutella-waffle', 'Nutella Waffle', 180],
+    ]),
+    ...make('pastries', [
+        ['croissant', 'Croissant', 90],
+        ['chocolate-croissant', 'Chocolate Croissant', 110],
+        ['danish-pastry', 'Danish Pastry', 100],
+        ['cinnamon-roll', 'Cinnamon Roll', 100],
+        ['puff-pastry', 'Puff Pastry', 80],
+    ]),
+    ...make('donuts', [
+        ['chocolate-donut', 'Chocolate Donut', 70],
+        ['strawberry-donut', 'Strawberry Donut', 70],
+        ['glazed-donut', 'Glazed Donut', 60],
+        ['sprinkle-donut', 'Sprinkle Donut', 70],
+        ['boston-cream-donut', 'Boston Cream Donut', 80],
+    ]),
+    ...make('cookies', [
+        ['choco-chip-cookie', 'Choco Chip Cookie', 60],
+        ['oatmeal-cookie', 'Oatmeal Cookie', 50],
+        ['double-chocolate-cookie', 'Double Chocolate Cookie', 70],
+        ['butter-cookie', 'Butter Cookie', 50],
+        ['peanut-butter-cookie', 'Peanut Butter Cookie', 60],
+    ]),
+    ...make('ice-cream', [
+        ['vanilla-ice-cream', 'Vanilla Scoop', 80],
+        ['chocolate-ice-cream', 'Chocolate Scoop', 90],
+        ['strawberry-ice-cream', 'Strawberry Scoop', 90],
+        ['butterscotch-ice-cream', 'Butterscotch Scoop', 90],
+        ['brownie-sundae', 'Brownie Sundae', 180],
+    ]),
+    ...make('coffee', [
+        ['espresso', 'Espresso', 100],
+        ['americano', 'Americano', 110],
+        ['cappuccino', 'Cappuccino', 130],
+        ['latte', 'Latte', 140],
+        ['cold-coffee', 'Cold Coffee', 150],
+    ]),
+    ...make('tea', [
+        ['milk-tea', 'Milk Tea', 40],
+        ['black-tea', 'Black Tea', 40],
+        ['green-tea', 'Green Tea', 60],
+        ['masala-tea', 'Masala Tea', 50],
+        ['lemon-tea', 'Lemon Tea', 50],
+    ]),
+    ...make('milkshakes', [
+        ['chocolate-shake', 'Chocolate Shake', 150],
+        ['vanilla-shake', 'Vanilla Shake', 140],
+        ['strawberry-shake', 'Strawberry Shake', 150],
+        ['oreo-shake', 'Oreo Shake', 170],
+        ['banana-shake', 'Banana Shake', 130],
+    ]),
+    ...make('fastfoods', [
+        ['veg-burger', 'Veg Burger', 150],
+        ['chicken-burger', 'Chicken Burger', 200],
+        ['cheese-burger', 'Cheese Burger', 190],
+        ['french-fries', 'French Fries', 100],
+        ['chicken-wings', 'Chicken Wings', 220],
+    ]),
+    ...make('pasta', [
+        ['white-sauce-pasta', 'White Sauce Pasta', 220],
+        ['red-sauce-pasta', 'Red Sauce Pasta', 210],
+        ['pink-sauce-pasta', 'Pink Sauce Pasta', 230],
+        ['mac-and-cheese', 'Mac and Cheese', 240],
+        ['chicken-alfredo', 'Chicken Alfredo', 280],
+    ]),
 ]
 
 // export const menu = [
