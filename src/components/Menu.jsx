@@ -13,14 +13,14 @@ const Menu = ({ className }) => {
                                     <span className='type'>{item.type}</span>
                                     <p className='paisa'>{item.price}/-</p>
                                 </div>
-                                <button>Add to cart</button>
+                                <button className='cursor-pointer border p-0 m-0 rounded-sm w-23'>Add to cart</button>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
         </div>
-
+// see there is a triangle how those div are aligned hahahahahah
     )
 }
 
