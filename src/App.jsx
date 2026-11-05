@@ -21,8 +21,8 @@ const App = () => {
           }}
         />
       )}
-      <header className='flex justify-between items-center p-5'>
-        <NavLink to="/" className='logo'>Cafe of Pixl</NavLink>
+      <header className='flex justify-between items-center p-5 navigation-tab'>
+        <NavLink to="/" className='logo text-4xl font-semibold'>Cafe of Pixl</NavLink>
         <nav className='flex gap-6'>
           <NavLink to="/" end>Menu</NavLink>
           <NavLink to="/kitchen" >Kitchen</NavLink>

@@ -10,7 +10,8 @@ export const CATEGORIZE = [
     { id: 'tea', name: 'Tea', color: '#789568', desc: 'Comforting cups of freshly brewed tea' },
     { id: 'milkshakes', name: 'Milkshakes', color: '#B77AC8', desc: 'Thick, creamy and delicious shakes' },
     { id: 'fastfoods', name: 'Fast Food', color: '#C77A36', desc: 'Here you go with some delicious fast foods' },
-    { id: 'pasta', name: 'Pasta', color: '#D18B52', desc: 'Delicious italia pasta tossed in rich sauces' }
+    { id: 'pasta', name: 'Pasta', color: '#D18B52', desc: 'Delicious italia pasta tossed in rich sauces' },
+    { id: 'chines', name: 'Chinese', color: '#D18B52', desc: 'Delicious italia pasta tossed in rich sauces' }
 ];
 const make = (category, list) =>
     list.map(([file, name, price]) => ({
@@ -97,6 +98,13 @@ export const menu = [
         ['chicken-wings', 'Chicken Wings', 220],
     ]),
     ...make('pasta', [
+        ['white-sauce-pasta', 'White Sauce Pasta', 220],
+        ['red-sauce-pasta', 'Red Sauce Pasta', 210],
+        ['pink-sauce-pasta', 'Pink Sauce Pasta', 230],
+        ['mac-and-cheese', 'Mac and Cheese', 240],
+        ['chicken-alfredo', 'Chicken Alfredo', 280],
+    ]),
+    ...make('Chainese', [
         ['white-sauce-pasta', 'White Sauce Pasta', 220],
         ['red-sauce-pasta', 'Red Sauce Pasta', 210],
         ['pink-sauce-pasta', 'Pink Sauce Pasta', 230],
