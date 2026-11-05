@@ -124,7 +124,7 @@ const Menu = ({ className }) => {
     //                     <div className="cards-body">
     //                         <div className="cards-head">
     //                             <h3 className='name'>{item.name}</h3>
-    //                             <span className='type'>{item.type}</span>
+    //                               <span className='type'>{item.type}</span>
     //                             <p className='paisa'>{item.price}/-</p>
     //                         </div>
     //                         <button className='cursor-pointer border p-0 m-0 rounded-sm w-23'>Add to cart</button>
