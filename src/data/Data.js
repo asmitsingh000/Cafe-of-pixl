@@ -15,7 +15,7 @@ export const CATEGORIZE = [
 ];
 const make = (category, list) =>
     list.map(([file, name, price]) => ({
-        id: file, category, name, price, img: `/photos/${file}.png`,
+        id: file, category, name, price, img: `/photos/${file}.webp`,
     }))
 
 export const menu = [
