@@ -75,8 +75,8 @@ const Menu = ({ className }) => {
         )}
       </div>
 
-      <div className="grid grid-cols-1 items-start gap-6 p-5 lg:grid-cols-[208px_1fr]">
-        <aside className="rounded-xl border p-4 text-center lg:sticky lg:top-4">
+      <div className=" grid grid-cols-1 items-start gap-6 p-5 lg:grid-cols-[208px_1fr]">
+        <aside className="sp-card rounded-xl border p-4 text-center lg:sticky lg:top-4">
           <span className="font-bold">Today's Special</span>
           <img
             src={special.img}
@@ -85,7 +85,7 @@ const Menu = ({ className }) => {
           />
           <h3 className="mt-3 text-lg font-semibold">{special.name}</h3>
           <p className="mb-3">{special.price}/-</p>
-          <button className="cursor-pointer border rounded-sm py-1 px-3 ">
+          <button onClick={() => add(special.id)} className="cursor-pointer border rounded-sm py-1 px-3 ">
             Add to Carts
           </button>
         </aside>
