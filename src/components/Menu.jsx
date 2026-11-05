@@ -25,7 +25,7 @@ const Menu = ({ className }) => {
             <div className='grid grid-cols-1 items-start gap-6 p-5 lg:grid-cols-[208px_1fr]'>
                 <aside className='rounded-xl border p-4 text-center lg:sticky lg:top-4'>
                     <span className='font-bold'>Today's Special</span>
-                    <img src={special.img} alt="{special.name}" className='mt-3 aspect-square w-full rounded-lg object-cover' />
+                    <img src={special.img} alt={special.name} className='mt-3 aspect-square w-full rounded-lg object-cover' />
                     <h3>{special.name}</h3>
                     <p>{special.price}</p>
                     <button>
