@@ -8,17 +8,17 @@ import Home from './components/Home'
 const App = () => {
   const [cart, setCart] = useState([])
   const count = cart.length
-  const [open, close] = useState(() =>!sessionStorage.getItem('seen'))
-  const [Started, setStarted] = useState(()=> !!sessionStorage.getItem('seen'))
+  const [open, close] = useState(() => !sessionStorage.getItem('seen'))
+  const [Started, setStarted] = useState(() => !!sessionStorage.getItem('seen'))
   return (
     <>
       {open && (
         <Home
-        onStart={()=>setStarted(true)}
-        onSampat={()=>{
-          sessionStorage.setItem('seen',1)
-          close(false)
-        }}
+          onStart={() => setStarted(true)}
+          onSampat={() => {
+            sessionStorage.setItem('seen', 1)
+            close(false)
+          }}
         />
       )}
       <header className='flex justify-between items-center p-5'>
