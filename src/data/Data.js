@@ -15,16 +15,16 @@ export const CATEGORIZE = [
 ];
 const make = (category, list) =>
     list.map(([file, name, price]) => ({
-        id: file, category, name, price, img: `/photos/${file}.jpg`,
+        id: file, category, name, price, img: `/photos/${file}.png`,
     }))
 
 export const menu = [
     ...make('cakes', [
-        ['chocolate-cake', 'Chocolate Cake', 120],
-        ['red-velvet-cake', 'Red Velvet Cake', 140],
-        ['black-forest-cake', 'Black Forest Cake', 130],
-        ['cheesecake', 'Cheesecake', 160],
-        ['pineapple-cake', 'Pineapple Cake', 110],
+        ['ChocolateCake', 'Chocolate Cake', 120],
+        ['RedVelvetCake', 'Red Velvet Cake', 140],
+        ['BlackForestCake', 'Black Forest Cake', 130],
+        ['CheeseCake', 'Cheesecake', 160],
+        ['PineappleCake', 'Pineapple Cake', 110],
     ]),
     ...make('pancakes', [
         ['classic-pancakes', 'Classic Pancakes', 150],
