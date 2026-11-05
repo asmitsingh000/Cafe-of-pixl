@@ -4,10 +4,11 @@ import Menu from './components/Menu'
 import Carts from './components/Carts'
 import Kitchen from './components/Kitchen'
 import Home from './components/Home'
+import { useStore } from './storage'
 
 const App = () => {
-  const [cart, setCart] = useState([])
-  const count = cart.length
+  const {cart} = useStore()
+  const count = Object.values(cart).reduce((a,b)=>a+b,0)
   const [open, close] = useState(() => !sessionStorage.getItem('seen'))
   const [Started, setStarted] = useState(() => !!sessionStorage.getItem('seen'))
   return (
@@ -30,11 +31,9 @@ const App = () => {
         </nav>
       </header>
       <Routes>
-        {/* <Route path='/' element={<Home/>}  /> */}
         <Route path='/' element={<Menu className={Started ? 'menu-show' : 'menu-hide'} />} />
         <Route path='/kitchen' element={<Kitchen />} />
         <Route path='/cart' element={<Carts />} />
-        {/* <Route path='/cart' element={<Carts cart={cart} setCart={setCart} />} /> */}
       </Routes>
     </>
   )

@@ -1,12 +1,13 @@
 import { createContext, useContext, useState } from "react";
 
-const StoreContext = createContext();
+const StoreContext = createContext()
 export const useStore = () => useContext(StoreContext);
 
 export function StoreProvider({ children }) {
   const [cart, setCart] = useState({});
-  const [order, setOrder] = useState([]);
+  const [orders, setOrder] = useState([]);
   const add = (id) => setCart((c) => ({ ...c, [id]: (c[id] || 0) + 1 }));
+
   const sub = (id) =>
     setCart((c) => {
       const n = (c[id] || 0) - 1;
@@ -24,7 +25,7 @@ export function StoreProvider({ children }) {
     });
 
   const PlaceOrder = (name, items) => {
-    const id = order.length + 1;
+    const id = orders.length + 1;
     setOrder((o) => [...o, { id, name, items, status: "new" }]);
     setCart({});
     return id;
@@ -33,8 +34,8 @@ export function StoreProvider({ children }) {
     setOrder(o=>o.map(x=>(x.id === id ? {...x,status}:x)))
 
   return(
-    <StoreProvider.Provider value={{cart,add, sub , remove, PlaceOrder, orders, setStatus}}>
+    <StoreContext.Provider value={{cart,add, sub , remove, PlaceOrder, orders, setStatus}}>
         {children}
-    </StoreProvider.Provider>
+    </StoreContext.Provider>
   )
 }

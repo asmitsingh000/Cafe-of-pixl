@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { CATEGORIZE, menu } from "../data/Data";
 import { use } from "react";
+import { useStore } from "../storage";
 const Menu = ({ className }) => {
   const [active, setActive] = useState("all");
   const items =
@@ -25,6 +26,8 @@ const Menu = ({ className }) => {
 
   const scrollRow = (dir) =>
     rowRef.current.scrollBy({ left: dir * 250, behavior: "smooth" });
+
+  const {add} = useStore()
   return (
     <div className={className}>
       <div className="relative px-5 py-4 ">
@@ -105,7 +108,7 @@ const Menu = ({ className }) => {
                   {CATEGORIZE.find((c) => c.id === item.category)?.name}
                 </span>
                 <p>{item.price}/-</p>
-                <button className="cursor-pointer rounded-sm border px-3 py-1">
+                <button onClick={()=>add(item.id)} className="cursor-pointer rounded-sm border px-3 py-1">
                   Add to cart
                 </button>
               </div>
