@@ -26,9 +26,9 @@ const Menu = ({ className }) => {
                 <aside className='rounded-xl border p-4 text-center lg:sticky lg:top-4'>
                     <span className='font-bold'>Today's Special</span>
                     <img src={special.img} alt={special.name} className='mt-3 aspect-square w-full rounded-lg object-cover' />
-                    <h3>{special.name}</h3>
-                    <p>{special.price}</p>
-                    <button>
+                    <h3 className='mt-3 text-lg font-semibold'>{special.name}</h3>
+                    <p className='mb-3'>{special.price}/-</p>
+                    <button className='cursor-pointer border rounded-sm py-1 px-3 '>
                         Add to Carts
                     </button>
                 </aside>

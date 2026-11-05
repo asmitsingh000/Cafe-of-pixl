@@ -1,5 +1,20 @@
 @import "tailwindcss";
+:root{
+    --cozy: #e7d8bf;
+    --ink: #4a3224;
+}
 
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: var(--cozy);
+    color: var(--ink);
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 22px;
+}
 img {
     max-width: 100%;
     display: block;

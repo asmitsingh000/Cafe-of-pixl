@@ -9,7 +9,7 @@ export const CATEGORIZE = [
     { id: 'coffee', name: 'Hot Coffee', color: '#6F422D', desc: 'Warm, cold and freshly brewed refreshing coffee' },
     { id: 'tea', name: 'Tea', color: '#789568', desc: 'Comforting cups of freshly brewed tea' },
     { id: 'milkshakes', name: 'Milkshakes', color: '#B77AC8', desc: 'Thick, creamy and delicious shakes' },
-    { id: 'fastfoods', name: 'Burgers', color: '#C77A36', desc: 'Here you go with some delicious fast foods' },
+    { id: 'fastfoods', name: 'Fast Food', color: '#C77A36', desc: 'Here you go with some delicious fast foods' },
     { id: 'pasta', name: 'Pasta', color: '#D18B52', desc: 'Delicious italia pasta tossed in rich sauces' }
 ];
 const make = (category, list) =>
@@ -90,6 +90,7 @@ export const menu = [
     ]),
     ...make('fastfoods', [
         ['veg-burger', 'Veg Burger', 150],
+        ['pizza', 'Cheese Pizza', 220],
         ['chicken-burger', 'Chicken Burger', 200],
         ['cheese-burger', 'Cheese Burger', 190],
         ['french-fries', 'French Fries', 100],
