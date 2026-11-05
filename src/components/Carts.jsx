@@ -34,9 +34,18 @@ const Carts = () => {
           {rows.map((l) => (
             <li key={l.id}>
               <img src={l.img} alt={l.name} />
+              <span>{l.name}</span>
+              <button onClick={() => sub(l.id)}>-</button>
+              <b>{l.qty}</b>
+              <button onClick={() => add(l.id)}>+</button>
+              <span>{(l.price*l.qty).toFixed(2)}</span>
+              <button onClick={() => remove(l.id)}>remove</button>
             </li>
           ))}
         </ul>
+        <div className="Total"> 
+          Total: Nrs.{total.toFixed(2)}
+        </div>
         </>
       )}
     </div>
