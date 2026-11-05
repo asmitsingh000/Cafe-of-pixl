@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-const StoreContext = createContext()
+const StoreContext = createContext();
 export const useStore = () => useContext(StoreContext);
 
 export function StoreProvider({ children }) {
@@ -26,16 +26,25 @@ export function StoreProvider({ children }) {
 
   const PlaceOrder = (name, items) => {
     const id = orders.length + 1;
-    setOrder((o) => [...o, { id, name, items, status: "new" }]);
+    setOrder((o) => [
+      ...o,
+      { id, name, items, status: "new", time: Date.now(), hidden: false },
+    ]);
     setCart({});
     return id;
   };
-  const setStatus = (id,status) =>
-    setOrder(o=>o.map(x=>(x.id === id ? {...x,status}:x)))
+  const setStatus = (id, status) =>
+    setOrder((o) => o.map((x) => (x.id === id ? { ...x, status } : x)));
 
-  return(
-    <StoreContext.Provider value={{cart,add, sub , remove, PlaceOrder, orders, setStatus}}>
-        {children}
+  const clearDone = () =>
+    setOrder((o) =>
+      o.map((x) => (x.status === "done" ? { ...x, hidden: true } : x)));
+
+  return (
+    <StoreContext.Provider
+      value={{ cart, add, sub, remove, PlaceOrder, orders, setStatus, clearDone }}
+    >
+      {children}
     </StoreContext.Provider>
-  )
+  );
 }
