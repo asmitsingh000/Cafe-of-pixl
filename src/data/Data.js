@@ -93,9 +93,9 @@ export const menu = [
     ]),
     ...make('fastfoods', [
         ['Pixel Art Café Treats Sprite Sheet_51', 'Veg Burger', 150],
-        ['Pixel Art Café Treats Sprite Sheet_52', 'Cheese Pizza', 220],
         ['Pixel Art Café Treats Sprite Sheet_53', 'Chicken Burger', 200],
         ['Pixel Art Café Treats Sprite Sheet_54', 'Cheese Burger', 190],
+        ['Pixel Art Café Treats Sprite Sheet_52', 'Cheese Pizza', 220],
         ['Pixel Art Café Treats Sprite Sheet_55', 'French Fries', 100],
         ['Pixel Art Café Treats Sprite Sheet_56', 'Chicken Wings', 220],
     ]),
