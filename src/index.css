@@ -10,7 +10,9 @@
 * {
   box-sizing: border-box;
 }
-
+*::-webkit-scrollbar{
+  display: none;
+}
 body {
   margin: 0;
   background: var(--cozy);
@@ -35,8 +37,18 @@ img {
   border: 2px solid black;
   margin: 12px 6px;
   box-shadow: 4px 6px 2px black;
+  background: #cfb891;
 }
+header nav .nav-tab{
+  border: 1px solid ;
+  padding: 3px 15px ;
+  box-shadow:3px 3px 2px rgb(33, 32, 32) ;
+}
+nav .active{
+  background: #d6b465;
+  font-weight: semibold;
 
+}
 .no-scrollbar {
   scrollbar-width: none;
 }
@@ -116,13 +128,13 @@ img {
 
 .menu-show .cards {
   animation: itemIn 0.8s ease backwards;
-  animation-delay: calc(var(--i) * 0.1s + 0.3s);
+  animation-delay: calc(var(--i) * 0.1s + 0.2s);
 }
 
 @keyframes itemIn {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(25px);
   }
 
   to {

@@ -96,45 +96,47 @@ const Carts = () => {
         </>
       )}
       {placed && (
-        <p className="ye-le mt-4">Order #{placed} sent to the Kitchen</p>
+        <p className="ye-le mt-4">Order #{placed} sent to the <Link to="/kitchen"> Kitchen</Link></p>
       )}
       {orders.length > 0 && (
         <>
           <h3 className="mt-12 text-base">Your Orders</h3>
           <div className="rope">
-            {[...orders].reverse().map((o) => (
-              <div className="note-wrap" key={o.id}>
-                <div
-                  className="note"
-                  style={{
-                    "--bg": Colors[o.id % Colors.length],
-                    "--r": `${Tiles[o.id % Tiles.length]}deg`,
-                  }}
-                >
-                  <span className="pin" />
-                  <div className="flex items-baseline justify-between">
-                    <b className="text-2xl">#{o.id} </b>
-                    <span className="text-base">{o.name || "-"}</span>
-                  </div>
-                  <ul className="my-3 border-y-2 border-dashed border-black/30 py-2 text-base ">
-                    {o.items.map((it, idx) => (
-                      <li key={idx} className="flex justify-between">
-                        <span>
-                          {it.qty}x {it.name}
-                        </span>
-                        <span>{it.price * it.qty}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex items-center justify-between">
-                    <span>
-                      {o.items.reduce((s,it)=>s+it.price * it.qty, 0)}/-
-                    </span>
-                    <span className={`pill ${o.status}`}>{Label[o.status]}</span>
+            <Link to="/kitchen">
+              {[...orders].reverse().map((o) => (
+                <div className="note-wrap" key={o.id}>
+                  <div
+                    className="note"
+                    style={{
+                      "--bg": Colors[o.id % Colors.length],
+                      "--r": `${Tiles[o.id % Tiles.length]}deg`,
+                    }}
+                  >
+                    <span className="pin" />
+                    <div className="flex items-baseline justify-between">
+                      <b className="text-2xl">#{o.id} </b>
+                      <span className="text-base">{o.name || "-"}</span>
+                    </div>
+                    <ul className="my-3 border-y-2 border-dashed border-black/30 py-2 text-base ">
+                      {o.items.map((it, idx) => (
+                        <li key={idx} className="flex justify-between">
+                          <span>
+                            {it.qty}x {it.name}
+                          </span>
+                          <span>{it.price * it.qty}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex items-center justify-between">
+                      <span>
+                        {o.items.reduce((s, it) => s + it.price * it.qty, 0)}/-
+                      </span>
+                      <span className={`pill ${o.status}`}>{Label[o.status]}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </Link>
           </div>
         </>
       )}

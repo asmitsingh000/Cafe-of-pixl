@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from "react";
 import { CATEGORIZE, menu } from "../data/Data";
-import { use } from "react";
 import { useStore } from "../storage";
 const Menu = ({ className }) => {
   const [active, setActive] = useState("all");
@@ -15,11 +14,12 @@ const Menu = ({ className }) => {
     const el = rowRef.current;
     if (!el) return;
     setCanLeft(el.scrollLeft > 0);
-    setCanRight(el.scrollLeft + el.clientwidth < el.scrollwidth - 1);
+    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
   };
 
   useEffect(() => {
     checkScroll();
+    const t = setTimeout(checkScroll,300);
     window.addEventListener("resize", checkScroll);
     return () => window.removeEventListener("resize", checkScroll);
   }, []);
@@ -27,14 +27,14 @@ const Menu = ({ className }) => {
   const scrollRow = (dir) =>
     rowRef.current.scrollBy({ left: dir * 250, behavior: "smooth" });
 
-  const {add} = useStore()
+  const { add } = useStore()
   return (
     <div className={className}>
       <div className="relative px-5 py-4 ">
         {canLeft && (
           <button
             onClick={() => scrollRow(-1)}
-            className="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border bg-white text-black shadow"
+            className="absolute left-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center  border bg-amber-500 text-black shadow"
           >
             ←
           </button>
@@ -46,9 +46,8 @@ const Menu = ({ className }) => {
         >
           <button
             onClick={() => setActive("all")}
-            className={`cursor-pointer whitespace-nowrap rounded-full border px-4 py-2 transition ${
-              active === "all" ? "bg-black text-white" : "bg-transparent"
-            }`}
+            className={`cursor-pointer whitespace-nowrap rounded-full border px-4 py-2 transition ${active === "all" ? "bg-black text-white" : "bg-transparent"
+              }`}
           >
             All
           </button>
@@ -57,9 +56,8 @@ const Menu = ({ className }) => {
               key={c.id}
               onClick={() => setActive(c.id)}
               style={{ "--c": c.color }}
-              className={`cursor-pointer whitespace-nowrap rounded-full border border-[var(--c)] px-4 py-2 transition ${
-                active === c.id ? "bg-[var(--c)] text-white" : "bg-transparent"
-              }`}
+              className={`cursor-pointer whitespace-nowrap rounded-full border border-[var(--c)] px-4 py-2 transition ${active === c.id ? "bg-[var(--c)] text-white" : "bg-transparent"
+                }`}
             >
               {c.name}
             </button>
@@ -68,7 +66,7 @@ const Menu = ({ className }) => {
         {canRight && (
           <button
             onClick={() => scrollRow(1)}
-            className="absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border bg-white text-black shadow"
+            className="absolute right-0 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center  border bg-amber-500 text-black shadow"
           >
             →
           </button>
@@ -107,8 +105,8 @@ const Menu = ({ className }) => {
                 <span className="text-sm opacity-70">
                   {CATEGORIZE.find((c) => c.id === item.category)?.name}
                 </span>
-                <p>{item.price}/-</p>
-                <button onClick={()=>add(item.id)} className="cursor-pointer rounded-sm border px-3 py-1">
+                <p>Nrs.{item.price}/-</p>
+                <button onClick={() => add(item.id)} className="cursor-pointer rounded-sm border px-3 py-1">
                   Add to cart
                 </button>
               </div>
