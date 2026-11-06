@@ -30,15 +30,13 @@ const App = () => {
           <NavLink to="/cart" className="nav-tab" end>Cart {count > 0 && <span className='border-2 px-2 bg-[#de6408]'> {count}</span>}</NavLink>
         </nav>
       </header>
-      <footer>
-        <span>@ 2026 ASMIT SINGH -ALL rights reserved</span>
-      </footer>
 
       <Routes>
         <Route path='/' element={<Menu className={Started ? 'menu-show' : 'menu-hide'} />} />
         <Route path='/kitchen' element={<Kitchen />} />
         <Route path='/cart' element={<Carts />} />
       </Routes>
+
     </>
   )
 }

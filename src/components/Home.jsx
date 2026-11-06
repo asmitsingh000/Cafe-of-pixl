@@ -14,6 +14,10 @@ export default function Home({ onStart, onSampat }) {
     <div className={fading ? 'pulse band' : 'pulse hai'} onClick={enter}>
       <h1 className="text-4xl ">Welcome To The Cafe Of Pixl</h1>
       <p className="animate-pulse fade">Click here to see our menu</p>
+
+      <footer>
+        <span>@ 2026 ASMIT SINGH -ALL rights reserved</span>
+      </footer>
     </div>
   )
 }
