@@ -55,6 +55,11 @@ Here, we have two section one is Today's special item section and the others are
 - React Context for the shared cart and orders
 - Tailwind CSS And Plain Css a matte light creamy palette, Pixelify Sans and Press Start 2P
 
+## What i still need to add in this :- 
+1. I need to add a little comfy animation on kitchen where it shows diffrent cooking for the diffrent items to cook.
+2. I need to Add a real backend system  so orders work across the devices
+3. Need to make responsive it works perfect for the bigger display
+
 ## Run it locally
 
 ```
