@@ -33,7 +33,7 @@ const Carts = () => {
       <h2 className="my-6 text-xl">Your Order </h2>
       {rows.length === 0 ? (
         <p>
-          The Tray is Empty <Link to="/">Open the menu</Link> and Pick-up
+          The Tray is Empty <Link to="/" className="underline">Open the menu</Link> and Pick-up
           Somthing. :)
         </p>
       ) : (
@@ -87,7 +87,7 @@ const Carts = () => {
               className="flex-1 rounded border-2 bg-transparent px-3 py-2 outline-none"
             />
             <button
-              className="btn cursor-pointer rounded border-2 bg-[var(--welcome)] px-5 py-2"
+              className="cursor-pointer rounded border-2 bg-[var(--welcome)] px-5 py-2"
               onClick={place}
             >
               Place Order
