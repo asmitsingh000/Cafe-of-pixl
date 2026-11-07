@@ -57,7 +57,7 @@ Here, we have two section one is Today's special item section and the others are
 
 ## What i still need to add in this :- 
 1. I need to add a little comfy animation on kitchen where it shows diffrent cooking for the diffrent items to cook.
-2. I need to Add a real backend system  so orders work across the devices
+2. I need to Add a real backend system  so orders work across the devices (Done )
 3. Need to make responsive it works perfect for the bigger display
 
 ## Run it locally
