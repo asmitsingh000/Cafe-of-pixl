@@ -29,8 +29,8 @@ const Carts = () => {
     setName("");
   };
   return (
-    <div className="mx-auto max-w-4xl px-5 pb-16 ">
-      <h2 className="my-6 text-xl">Your Order </h2>
+    <div className="mx-auto max-w-4xl px-3 pb-16 sm:pb-5 ">
+      <h2 className="my-6 text-base sm:text-xl">Your Order </h2>
       {rows.length === 0 ? (
         <p>
           The Tray is Empty <Link to="/" className="underline">Open the menu</Link> and Pick-up
@@ -42,43 +42,45 @@ const Carts = () => {
             {rows.map((l) => (
               <li
                 key={l.id}
-                className="flex items-center gap-3 border-b-2 border-dashed border-black/20 py-3"
+                className="flex felx-wrap items-center gap-x-3 gap-y-2 border-b-2 border-dashed border-black/20 py-3"
               >
                 <img
                   src={l.img}
                   alt={l.name}
-                  className="h-12 w-12 object-contain"
+                  className="h-10 w-10 object-contain sm:h-12 sm:w-12"
                 />
-                <span className="flex-1">{l.name}</span>
-                <button
-                  onClick={() => sub(l.id)}
-                  className="h-8 w-8 cursor-pointer rounded border-2"
-                >
-                  -
-                </button>
-                <b className="w-6 text-center">{l.qty}</b>
-                <button
-                  onClick={() => add(l.id)}
-                  className="h-8 w-8 cursor-pointer rounded border-2"
-                >
-                  +
-                </button>
-                <span className="w-20 text-right">
-                  {(l.price * l.qty).toFixed(2)}
-                </span>
-                <button
-                  onClick={() => remove(l.id)}
-                  className="cursor-pointer rounded border-2 px-2 text-sm"
-                >
-                  remove
-                </button>
+                <span className="flex-1 min-w-0 basis-32">{l.name}</span>
+                <div className="flex w-full items-center gap-2 sm:w-auto gap-3">
+                  <button
+                    onClick={() => sub(l.id)}
+                    className="h-5 w-5 cursor-pointer rounded border-2"
+                  >
+                    -
+                  </button>
+                  <b className="w-6 text-center">{l.qty}</b>
+                  <button
+                    onClick={() => add(l.id)}
+                    className="h-5 w-5 cursor-pointer  rounded border-2"
+                  >
+                    +
+                  </button>
+                  <span className="flex-1 text-right sm:w-20 sm:flex-none">
+                    {(l.price * l.qty).toFixed(2)}
+                  </span>
+                  <button
+                    onClick={() => remove(l.id)}
+                    className="cursor-pointer rounded border-2 px-2 text-sm"
+                  >
+                    remove
+                  </button>
+                </div>
               </li>
             ))}
           </ul>
-          <div className="Total mt-4 text-right text-2xl">
+          <div className="Total mt-4 text-right text-xl sm:text-2xl">
             Total: Nrs.{total.toFixed(2)}
           </div>
-          <div className="lengthss mt-4 flex gap-3">
+          <div className="lengthss mt-4 flex flex-col sm:flex-row gap-3">
             <input
               type="text"
               placeholder="Your tabel no."
@@ -100,9 +102,9 @@ const Carts = () => {
       )}
       {orders.length > 0 && (
         <>
-          <h3 className="mt-12 text-base">Your Orders</h3>
+          <h3 className="mt-12 text-sm sm:text-base">Your Orders</h3>
           <div className="rope">
-            <Link to="/kitchen">
+            <Link to="/kitchen" className="contents">
               {[...orders].reverse().map((o) => (
                 <div className="note-wrap" key={o.id}>
                   <div

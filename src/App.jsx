@@ -22,9 +22,9 @@ const App = () => {
           }}
         />
       )}
-      <header className='flex justify-between items-center p-5 navigation-tab'>
-        <NavLink to="/" className='logo text-4xl font-semibold'>Cafe of Pixl</NavLink>
-        <nav className='flex gap-6'>
+      <header className='flex flex-wrap items-center justify-between gap-2 p-3 md:p-5 navigation-tab'>
+        <NavLink to="/" className='logo text-sm md:text-xl'>Cafe of Pixl</NavLink>
+        <nav className='flex gap-2 text-sm md:gap-6 md:text-base'>
           <NavLink to="/" className="nav-tab" end>Menu</NavLink>
           <NavLink to="/kitchen" className="nav-tab"  >Kitchen</NavLink>
           <NavLink to="/cart" className="nav-tab" end>Cart {count > 0 && <span className='border-2 px-2 bg-[#de6408]'> {count}</span>}</NavLink>
