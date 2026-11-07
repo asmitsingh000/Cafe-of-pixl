@@ -53,14 +53,14 @@ const Carts = () => {
                 <div className="flex w-full items-center gap-2 sm:w-auto gap-3">
                   <button
                     onClick={() => sub(l.id)}
-                    className="h-5 w-5 cursor-pointer rounded border-2"
+                    className="h-8 w-8 cursor-pointer rounded border-2"
                   >
                     -
                   </button>
                   <b className="w-6 text-center">{l.qty}</b>
                   <button
                     onClick={() => add(l.id)}
-                    className="h-5 w-5 cursor-pointer  rounded border-2"
+                    className="h-8 w-8 cursor-pointer  rounded border-2"
                   >
                     +
                   </button>
